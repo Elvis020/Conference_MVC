@@ -10,16 +10,30 @@
 <html>
 <head>
     <title>Registration</title>
+    <style>
+        .error{
+            color: #ff0000;
+        }
+        .errorblock{
+            color: #000;
+            background-color: #ffEEEE;
+            border: 1px solid #ff0000;
+            margin: 8px;
+            padding: 16px;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to the registration page!</h1>
     <form:form modelAttribute="registration">
+        <form:errors path="*" cssClass="errorblock" element="div" />
         <table>
             <tr>
                 <td>
                     <spring:message code="name" text="default"/>
                 </td>
                 <td><form:input path="name"/></td>
+                <td><form:errors path="name" cssClass="error"/></td>
             </tr>
             <tr>
                 <td colspan="2">
